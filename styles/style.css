@@ -1,0 +1,9 @@
+.handphone-width {
+    max-width: 700px;
+    width: auto;
+}
+
+.background-paper {
+    background: url("../assets/images/BG\ -\ Asset\ -\ Small.jpg") repeat;
+    background-size: cover;
+}
