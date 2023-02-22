@@ -3,6 +3,9 @@
 // import Bunga from '@/assets/images/bottom-2.svg';
 // import User from '@/assets/images/user.png';
 
+import { Player } from '@lottiefiles/react-lottie-player';
+
+
 export default function Page4() {
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
@@ -12,7 +15,14 @@ export default function Page4() {
 
                     {/* <img src={Bunga.src} style={{ width: '100%', position: 'absolute', zIndex: 1, transform: 'translate(-50%, 80%)', left: '50%', bottom: '35px' }} /> */}
 
-                    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_kotaolcw.json" background="transparent" speed="1" style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-10%' }} loop autoplay></lottie-player>
+                    <Player
+                        autoplay
+                        loop
+                        src="https://assets5.lottiefiles.com/packages/lf20_kotaolcw.json"
+                        style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-10%' }}
+                    />
+
+                    {/* <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_kotaolcw.json" background="transparent" speed="1" style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-10%' }} loop autoplay></lottie-player> */}
                     {/* <img src={IconTop.src} style={{ width: '5rem' }} /> */}
                     <div className='position-relative p-3 p-md-5 h-100' style={{ zIndex: 2 }}>
                         {/* Main */}
@@ -23,7 +33,13 @@ export default function Page4() {
                                         <span className='cormorant-bold' style={{ fontSize: '1.5rem' }}>RSVP Wishes</span>
 
                                         <center>
-                                            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_3hjvh1ex.json" background="transparent" speed="1" style={{ width: '4rem', height: '4rem' }} loop autoplay></lottie-player>
+                                            <Player
+                                                autoplay
+                                                loop
+                                                src="https://assets2.lottiefiles.com/packages/lf20_3hjvh1ex.json"
+                                                style={{ width: '4rem', height: '4rem' }}
+                                            />
+                                            {/* <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_3hjvh1ex.json" background="transparent" speed="1" style={{ width: '4rem', height: '4rem' }} loop autoplay></lottie-player> */}
                                         </center>
                                     </div>
                                 </div>
