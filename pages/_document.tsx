@@ -1,18 +1,23 @@
+/* eslint-disable @next/next/no-title-in-document-head */
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>Wedding Arin Ayudiastika and Diana Yusuf</title>
         <link
           rel="stylesheet"
-          // href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" />
       </Head>
-      <body style={{ overflowX: 'hidden' }}>
+      <body style={{ overflowX: 'hidden', overflowY: 'hidden' }}>
         <Main />
         <NextScript />
+
+        <script async src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       </body>
     </Html>
   )

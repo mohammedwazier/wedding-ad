@@ -78,6 +78,16 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Sacramento';
+    src: url("/fonts/Sacramento/Sacramento-regular.ttf");
+}
+
+@font-face {
+    font-family: 'DancingScript';
+    src: url("/fonts/DancingScript/DancingScript-VariableFont_wght.ttf");
+}
+
 
 .parsienne {
     font-family: 'parsienne';
@@ -144,6 +154,14 @@
     font-family: 'Cormorant';
     font-weight: 700;
     font-style: italic;
+}
+
+.sacramento {
+    font-family: 'Sacramento';
+}
+
+.dancing-script {
+    font-family: 'DancingScript';
 }
 
 /* In your css file where you want to use the font */

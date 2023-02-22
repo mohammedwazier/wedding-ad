@@ -4,6 +4,22 @@
 }
 
 .background-paper {
-    background: url("../assets/images/BG\ -\ Asset\ -\ Small.jpg") repeat;
-    background-size: cover;
+    /* background: url("../assets/images/BG\ -\ Asset\ -\ Small.jpg") repeat; */
+    /* background: url("../assets/images/so-white.png") repeat; */
+    background: url("../assets/images/BG-New.jpg") repeat;
+    /* background-size: cover; */
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 100%;
+    width: 100%;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 100%;
+    width: 100%;
 }
