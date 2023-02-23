@@ -11,11 +11,11 @@ import Image from 'next/image';
 
 export default function Page1() {
     return (
-        <div className={`handphone-width mx-auto position-relative min-vh-100 text-dark`}>
-            <div className=' position-relative vh-100'>
-                <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
-                    <img src={BungaTop.src} style={{ width: '10rem', position: 'absolute', right: '-1rem', top: '-1rem', zIndex: 1 }} />
-                    <img src={BungaDown.src} style={{ width: '10rem', position: 'absolute', left: '-1rem', bottom: '-1rem', zIndex: 1 }} />
+        <div className={`handphone-width mx-auto position-relative h-auto min-vh-100 text-dark`}>
+            <div className=' position-relative h-auto min-vh-100 background-paper' style={{ overflow: 'hidden' }}>
+                <img src={BungaDown.src} style={{ width: '10rem', position: 'absolute', left: '-1rem', bottom: '-1rem', zIndex: 1 }} />
+                <img src={BungaTop.src} style={{ width: '10rem', position: 'absolute', right: '-1rem', top: '-1rem', zIndex: 1 }} />
+                <div className='position-relative h-100'>
 
                     <div className='position-relative p-1 h-100'>
                         {/* Main */}
@@ -56,7 +56,7 @@ export default function Page1() {
                                             Diana Yusup, S.T.
                                         </h4> */}
                                     </div>
-                                    <div className='col-12 text-center text-grey align-items-end mb-5'>
+                                    <div className='col-12 text-center text-grey align-items-end position-relative' style={{ zIndex: 23 }}>
                                         <span className='cormorant-semibold'>TO:</span>
                                         <br />
                                         <span className='cormorant-bold' style={{ fontSize: '1.3rem' }}>Muhammad Waziruddin Akbar</span>
@@ -64,6 +64,10 @@ export default function Page1() {
                                         <br />
                                         <br />
                                         <span className='' style={{ fontSize: '1.8rem', fontFamily: 'Great Vibes' }}>I heartily invite you to our Wedding</span>
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
                                     </div>
                                 </div>
                             </div>
