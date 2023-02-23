@@ -9,7 +9,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 export default function Page4() {
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
-            <div className='p-3 position-relative h-100'>
+            <div className=' position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
                     {/* <img src={Bunga.src} style={{ width: '100%', position: 'absolute', zIndex: 1, transform: 'translate(-50%, -70%)rotate(180deg)', left: '50%', top: '35px' }} /> */}
 
@@ -30,7 +30,7 @@ export default function Page4() {
                             <div className='col-12'>
                                 <div className='row justify-content-center'>
                                     <div className='col-12 text-center'>
-                                        <span className='cormorant-bold' style={{ fontSize: '1.5rem' }}>RSVP Wishes</span>
+                                        <span className='' style={{ fontSize: '2rem', fontFamily: 'Great Vibes', fontWeight: 'bold' }}>RSVP</span>
 
                                         <center>
                                             <Player
@@ -39,15 +39,59 @@ export default function Page4() {
                                                 src="https://assets2.lottiefiles.com/packages/lf20_3hjvh1ex.json"
                                                 style={{ width: '4rem', height: '4rem' }}
                                             />
-                                            {/* <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_3hjvh1ex.json" background="transparent" speed="1" style={{ width: '4rem', height: '4rem' }} loop autoplay></lottie-player> */}
                                         </center>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className='row mt-4 justify-content-center'>
-                            <div className='col-10'>
-                                <div className='card rounded-lg'>
+                            <div className='col-12'>
+                                <div className='p-3' style={{ borderRadius: '10px', border: '1px solid rgba(174, 143, 122, 1)', background: 'rgba(174, 143, 122, .5)' }}>
+                                    <small style={{ fontSize: '.7rem' }} className="text-muted">*NB: Diharapkan tidak mencantumkan Emoticon saat mengisi Ucapan.</small>
+
+                                    <div className='form-group mt-4'>
+                                        <input type={'text'} className="form-control shadow-sm" placeholder='Nama' style={{ border: 'none', borderRadius: '10px' }} />
+                                    </div>
+
+                                    <div className='form-group mt-4'>
+                                        {/* <input type={'text'} className="form-control shadow-sm" placeholder='Nama' style={{ border: 'none', borderRadius: '10px' }} /> */}
+                                        <textarea className='form-control shadow-sm' placeholder='Ucapan' style={{ border: 'none', borderRadius: '10px', height: '100px' }} />
+                                    </div>
+
+                                    <div className='form-group'>
+                                        <select className='form-control' style={{ border: 'none', borderRadius: '10px', }}>
+                                            <option>Konfirmasi Kehadiran</option>
+                                            <option value={'hadir'}>Hadir</option>
+                                            <option value={'tidak_hadir'}>Tidak Hadir</option>
+                                        </select>
+                                    </div>
+
+                                    <div className='form-group'>
+                                        <button className='btn btn-block cormorant-regular btn-sm btn-coklat' style={{ borderRadius: '15px' }}>Kirim</button>
+                                    </div>
+
+                                    <div className='' style={{ height: '300px', overflowX: 'hidden', overflowY: 'auto', }}>
+                                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_v, key) => (
+                                            <div key={key} className="my-3 card" style={{ borderRadius: '10px' }}>
+                                                <div className='py-2 px-3'>
+                                                    <div className='cormorant-bold mb-1'>Gas</div>
+                                                    <div className='cormorant-regular'>
+                                                        kjhdfgkjdhgkjdhkjdfg
+                                                    </div>
+                                                    <div className='cormorant-light'>
+                                                        <small>
+                                                            <i className="fa fa-clock-o" style={{ fontSize: '10px' }} />
+                                                            &nbsp;
+                                                            1 minggu, 3 hari yang lalu
+                                                        </small>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                {/* <div className='card rounded-lg'>
                                     <div className='' style={{ height: '300px', overflowY: 'auto', overflowX: 'hidden' }}>
                                         {[0, 1, 2, 3, 4, 5, 6, 7].map((_v, key) => (
                                             <div key={key} className='card-body border border-light'>
@@ -80,9 +124,9 @@ export default function Page4() {
                                         ))}
 
                                     </div>
-                                </div>
+                                </div> */}
 
-                                <div className="card rounded-lg my-3">
+                                {/* <div className="card rounded-lg my-3">
                                     <div className="card-body text-center">
                                         <span className="cormorant-bold" style={{ fontSize: '1.5rem' }}>
                                             Buku Tamu & Ucapan
@@ -110,7 +154,7 @@ export default function Page4() {
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

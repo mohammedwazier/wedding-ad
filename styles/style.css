@@ -1,5 +1,9 @@
+body {
+    background-color: #fff !important;
+}
+
 .handphone-width {
-    max-width: 700px;
+    max-width: 415px;
     width: auto;
 }
 
@@ -22,4 +26,21 @@
     text-align: right;
     height: 100%;
     width: 100%;
+}
+
+.text-grey {
+    color: #5E5E5E;
+}
+
+.btn-coklat {
+    background-color: #AE8F7A;
+    border-color: #AE8F7A;
+    color: #FFF;
+    text-decoration: none;
+    transition: .3 ease;
+}
+
+.btn-coklat:hover {
+    background-color: #947a68;
+    border-color: #947a68;
 }

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "find:unused": "next-unused"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.2",
@@ -23,6 +24,7 @@
     "eslint-config-next": "13.1.6",
     "framer-motion": "^9.0.4",
     "next": "13.1.6",
+    "next-unused": "^0.0.6",
     "react": "18.2.0",
     "react-bootstrap": "^1.6.6",
     "react-dom": "18.2.0",
