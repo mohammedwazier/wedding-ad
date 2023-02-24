@@ -99,7 +99,7 @@ export default function Page2() {
                                     variants={rightVariants}
 
                                     className='text-center'>
-                                    <Image src={Man} alt={'Diana Yusuf'} width={208} height={260} />
+                                    <Image src={Man} alt={'Diana Yusup'} width={208} height={260} />
                                 </motion.div>
                             </div>
                             <div className='w-100' />

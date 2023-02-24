@@ -24,7 +24,7 @@ export default function Page1({ setOpened, playAudio }: any) {
     return (
         <>
             <Head>
-                <title>Wedding Arin Ayudiastika and Diana Yusuf</title>
+                <title>Wedding Arin Ayudiastika and Diana Yusup</title>
             </Head>
             <div id="page_1" className={`w-100 mx-auto position-relative h-auto vh-100 text-dark`} style={{ position: 'relative', zIndex: '25', overflowY: !btn ? 'auto' : 'hidden' }}>
                 <div className=' position-relative h-auto min-vh-100 background-paper' style={{ overflow: 'hidden' }}>
@@ -52,7 +52,7 @@ export default function Page1({ setOpened, playAudio }: any) {
                                                 }}
                                                 transition={{ duration: 1 }}
                                             >
-                                                <Image src={IconAD} alt={'Arin & Yusuf'} width={350} height={277} />
+                                                <Image src={IconAD} alt={'Arin & Yusup'} width={350} height={277} />
                                             </motion.div>
                                             <div className='als-script text-grey mt-5 position-relative mx-auto d-flex justify-content-around' style={{ fontSize: '4rem', width: '70%' }}>
                                                 <motion.div
