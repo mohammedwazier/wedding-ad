@@ -1,12 +1,18 @@
 /* eslint-disable @next/next/google-font-display */
 /* eslint-disable @next/next/no-title-in-document-head */
 import { Html, Head, Main, NextScript } from 'next/document'
+// import { useEffect } from 'react'
 
 export default function Document() {
+  // useEffect(() => {
+  //   let mainElement = document.getElementById("mainElement");
+
+
+  // }, [])
   return (
     <Html lang="en">
       <Head>
-        <title>Wedding Arin Ayudiastika and Diana Yusuf</title>
+        {/* <title>Wedding Arin Ayudiastika and Diana Yusuf</title> */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -18,7 +24,8 @@ export default function Document() {
         <link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Italiana' />
         <link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Great+Vibes' />
       </Head>
-      <body style={{ overflowX: 'hidden' }}>
+      {/* <body style={{ overflow: 'hidden' }}> */}
+      <body style={{ overflow: 'hidden' }}>
         <Main />
         <NextScript />
 

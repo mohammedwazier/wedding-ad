@@ -4,16 +4,41 @@
 // import User from '@/assets/images/user.png';
 
 import { Player } from '@lottiefiles/react-lottie-player';
+import { motion } from 'framer-motion';
 
 
 export default function Page4() {
+
+    const upVariants = {
+        onscreen: {
+            y: [-200, 0], opacity: [0, 1],
+            transition: {
+                duration: 1,
+                ease: "easeOut"
+            }
+        },
+        offscreen: { opacity: 0 }
+    }
+
+    const downVariants = {
+        onscreen: {
+            y: [200, 0], opacity: [0, 1],
+            transition: {
+                duration: 1,
+                ease: "easeOut"
+            }
+        },
+        offscreen: { opacity: 0 }
+    }
+
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
-            <div className=' position-relative h-100'>
+            <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.8 }}
+                className=' position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
-                    {/* <img src={Bunga.src} style={{ width: '100%', position: 'absolute', zIndex: 1, transform: 'translate(-50%, -70%)rotate(180deg)', left: '50%', top: '35px' }} /> */}
-
-                    {/* <img src={Bunga.src} style={{ width: '100%', position: 'absolute', zIndex: 1, transform: 'translate(-50%, 80%)', left: '50%', bottom: '35px' }} /> */}
 
                     <Player
                         autoplay
@@ -23,11 +48,12 @@ export default function Page4() {
                     />
 
                     {/* <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_kotaolcw.json" background="transparent" speed="1" style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-10%' }} loop autoplay></lottie-player> */}
-                    {/* <img src={IconTop.src} style={{ width: '5rem' }} /> */}
                     <div className='position-relative p-3 p-md-5 h-100' style={{ zIndex: 2 }}>
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center'>
-                            <div className='col-12'>
+                            <motion.div
+                                variants={upVariants}
+                                className='col-12'>
                                 <div className='row justify-content-center'>
                                     <div className='col-12 text-center'>
                                         <span className='' style={{ fontSize: '2rem', fontFamily: 'Great Vibes', fontWeight: 'bold' }}>RSVP</span>
@@ -42,10 +68,12 @@ export default function Page4() {
                                         </center>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                         <div className='row mt-4 justify-content-center'>
-                            <div className='col-12'>
+                            <motion.div
+                                variants={downVariants}
+                                className='col-12'>
                                 <div className='p-3' style={{ borderRadius: '10px', border: '1px solid rgba(174, 143, 122, 1)', background: 'rgba(174, 143, 122, .5)' }}>
                                     <small style={{ fontSize: '.7rem' }} className="text-muted">*NB: Diharapkan tidak mencantumkan Emoticon saat mengisi Ucapan.</small>
 
@@ -155,12 +183,12 @@ export default function Page4() {
                                         </form>
                                     </div>
                                 </div> */}
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
 
                 </div>
-            </div >
+            </motion.div >
         </div >
     )
 }
