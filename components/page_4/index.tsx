@@ -1,35 +1,142 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-// import Bunga from '@/assets/images/bottom-2.svg';
-// import User from '@/assets/images/user.png';
 
 import { Player } from '@lottiefiles/react-lottie-player';
 import { motion } from 'framer-motion';
+import { Key, useEffect, useState } from 'react';
 
+import Verified from '@/assets/images/verified.png';
+import UnVerified from '@/assets/images/un-verified.png';
+
+import { upVariants, downVariants } from '../HoverStyle';
+
+import moment from 'moment';
+import Image from 'next/image';
+
+import Swal from 'sweetalert2';
+
+moment.locale('id');
 
 export default function Page4() {
+    const [loadComment, setLoadComment] = useState<any>({
+        data: [],
+        prev_page_url: null,
+        next_page_url: null,
+    });
 
-    const upVariants = {
-        onscreen: {
-            y: [-200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
+    const [bukuTamu, setBukuTamu] = useState("");
+
+    const [message, setMessage] = useState({
+        name: "",
+        pesan: "",
+        status_kehadiran: "",
+        name_params: "",
+        wedding_code: process.env.NEXT_PUBLIC_WEDDING_KEY,
+    })
+    const [page, setPage] = useState(1);
+    const [load, setLoad] = useState(false);
+
+    const NextPage = async () => {
+        setPage(page + 1);
+        const data = await getData();
+        setLoadComment(data);
     }
 
-    const downVariants = {
-        onscreen: {
-            y: [200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
+    const PrevPage = async () => {
+        setPage(page - 1);
+        const data = await getData();
+        setLoadComment(data);
     }
+
+    const getData = async (pg = 1) => {
+        let PG = pg !== 1 ? page : pg;
+        const WeddingKey = process.env.NEXT_PUBLIC_WEDDING_KEY || "";
+        const WeddingURL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
+        let getListData = await fetch(`${WeddingURL}api/v1/get_list_buku/${WeddingKey}?page=${PG}`);
+        const response = await getListData.json();
+        return response;
+    }
+
+    const SendPesan = async () => {
+        if (message.name && message.pesan && message.status_kehadiran && message.name_params) {
+            const WeddingURL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
+            Swal.fire({
+                text: 'Sedang mengirimkan Ucapan',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                didOpen(popup) {
+                    Swal.showLoading()
+                },
+            });
+            fetch(`${WeddingURL}api/v1/insert_buku_tamu`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(message),
+            })
+                .then(res => res.json())
+                .then(async (res) => {
+                    Swal.fire({
+                        icon: 'success',
+                        text: "Terima kasih, Pesan berhasil Dikirim",
+                        timer: 2000,
+                    });
+                    const data = await getData(page);
+                    setLoadComment(data);
+                })
+                .catch(() => {
+                    Swal.fire({
+                        icon: 'warning',
+                        text: 'Gagal mengirimkan Ucapan, silahkan coba beberapa saat lagi',
+                        timer: 3000,
+                    })
+                })
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                text: 'Harap mengisi Ucapan terlebih dahulu',
+                timer: 3000,
+            })
+        }
+
+    }
+
+    const onChange = (e: any) => {
+        setMessage({
+            ...message,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    useEffect(() => {
+        if (!message.name_params) {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const Tamu = urlParams.get("to");
+            setBukuTamu(Tamu || "-");
+            setMessage({
+                ...message,
+                name_params: Tamu || "-"
+            })
+        }
+    }, [message])
+
+    useEffect(() => {
+        if (!load) {
+            (async () => {
+                const WeddingKey = process.env.NEXT_PUBLIC_WEDDING_KEY;
+                const WeddingURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+                let getListData = await fetch(`${WeddingURL}api/v1/get_list_buku/${WeddingKey}?page=${page}`);
+
+                const response = await getListData.json();
+
+                setLoadComment(response);
+                // console.log(response);
+                setLoad(!load);
+            })();
+        }
+    }, [load, page]);
 
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
@@ -37,7 +144,7 @@ export default function Page4() {
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.8 }}
-                className=' position-relative h-100'>
+                className='position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
 
                     <Player
@@ -47,7 +154,6 @@ export default function Page4() {
                         style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-10%' }}
                     />
 
-                    {/* <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_kotaolcw.json" background="transparent" speed="1" style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-10%' }} loop autoplay></lottie-player> */}
                     <div className='position-relative p-3 p-md-5 h-100' style={{ zIndex: 2 }}>
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center'>
@@ -57,7 +163,6 @@ export default function Page4() {
                                 <div className='row justify-content-center'>
                                     <div className='col-12 text-center'>
                                         <span className='' style={{ fontSize: '2rem', fontFamily: 'Great Vibes', fontWeight: 'bold' }}>RSVP</span>
-
                                         <center>
                                             <Player
                                                 autoplay
@@ -78,16 +183,15 @@ export default function Page4() {
                                     <small style={{ fontSize: '.7rem' }} className="text-muted">*NB: Diharapkan tidak mencantumkan Emoticon saat mengisi Ucapan.</small>
 
                                     <div className='form-group mt-4'>
-                                        <input type={'text'} className="form-control shadow-sm" placeholder='Nama' style={{ border: 'none', borderRadius: '10px' }} />
+                                        <input name="name" onChange={onChange} value={message.name} type={'text'} className="form-control shadow-sm" placeholder='Nama' style={{ border: 'none', borderRadius: '10px' }} />
                                     </div>
 
                                     <div className='form-group mt-4'>
-                                        {/* <input type={'text'} className="form-control shadow-sm" placeholder='Nama' style={{ border: 'none', borderRadius: '10px' }} /> */}
-                                        <textarea className='form-control shadow-sm' placeholder='Ucapan' style={{ border: 'none', borderRadius: '10px', height: '100px' }} />
+                                        <textarea name="pesan" onChange={onChange} value={message.pesan} className='form-control shadow-sm' placeholder='Ucapan' style={{ border: 'none', borderRadius: '10px', height: '100px' }} />
                                     </div>
 
                                     <div className='form-group'>
-                                        <select className='form-control' style={{ border: 'none', borderRadius: '10px', }}>
+                                        <select defaultValue={message.status_kehadiran} name="status_kehadiran" onChange={onChange} className='form-control' style={{ border: 'none', borderRadius: '10px', }}>
                                             <option>Konfirmasi Kehadiran</option>
                                             <option value={'hadir'}>Hadir</option>
                                             <option value={'tidak_hadir'}>Tidak Hadir</option>
@@ -95,94 +199,48 @@ export default function Page4() {
                                     </div>
 
                                     <div className='form-group'>
-                                        <button className='btn btn-block cormorant-regular btn-sm btn-coklat' style={{ borderRadius: '15px' }}>Kirim</button>
+                                        <button onClick={SendPesan} className='btn btn-block cormorant-regular btn-sm btn-coklat' style={{ borderRadius: '15px' }}>Kirim</button>
                                     </div>
 
                                     <div className='' style={{ height: '300px', overflowX: 'hidden', overflowY: 'auto', }}>
-                                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_v, key) => (
+                                        {loadComment?.data.map((_v: any, key: Key | null | undefined) => (
                                             <div key={key} className="my-3 card" style={{ borderRadius: '10px' }}>
                                                 <div className='py-2 px-3'>
-                                                    <div className='cormorant-bold mb-1'>Gas</div>
+                                                    <div className='cormorant-bold mb-1'>
+                                                        {_v.name} &nbsp;
+                                                        {_v.status_kehadiran === 'hadir' ? (
+                                                            <Image src={Verified} width="15" height="15" alt={'Verified'} style={{ position: 'relative', transform: 'translateY(-15%) translateX(-25%)' }} />
+                                                        ) : (
+                                                            <Image src={UnVerified} width="15" height="15" alt={'UnVerified'} style={{ position: 'relative', transform: 'translateY(-15%) translateX(-25%)' }} />
+                                                        )}
+                                                    </div>
                                                     <div className='cormorant-regular'>
-                                                        kjhdfgkjdhgkjdhkjdfg
+                                                        {_v.pesan}
                                                     </div>
                                                     <div className='cormorant-light'>
                                                         <small>
                                                             <i className="fa fa-clock-o" style={{ fontSize: '10px' }} />
                                                             &nbsp;
-                                                            1 minggu, 3 hari yang lalu
+                                                            {moment(_v.created_at).startOf('hour').fromNow()}
+                                                            &nbsp;
+                                                            {_v.status_kehadiran === 'hadir' ? <small className='text-primary'>Hadir</small> : <small className='text-danger'>Tidak Hadir</small>}
                                                         </small>
                                                     </div>
 
                                                 </div>
                                             </div>
                                         ))}
+                                        <div className='row justify-content-center align-items-center text-center'>
+                                            <div className='col-3'>
+                                                <button className='btn btn-outline-light btn-sm' onClick={PrevPage} disabled={loadComment.prev_page_url ? false : true}> {`<`} </button>
+                                            </div>
+                                            <div className='col-3 text-white cormorant-bold'>Page <b>{page}</b></div>
+                                            <div className='col-3'>
+                                                <button className='btn btn-outline-light btn-sm' onClick={NextPage} disabled={loadComment.next_page_url ? false : true}> {`>`} </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                {/* <div className='card rounded-lg'>
-                                    <div className='' style={{ height: '300px', overflowY: 'auto', overflowX: 'hidden' }}>
-                                        {[0, 1, 2, 3, 4, 5, 6, 7].map((_v, key) => (
-                                            <div key={key} className='card-body border border-light'>
-                                                <div className='row'>
-                                                    <div className='p-0 m-0 d-flex align-items-center' style={{ width: '4rem!important', }}>
-                                                        <div className='rounded-circle als-script position-relative' style={{ background: '#be9898', width: '3.5rem', height: '3.5rem' }}>
-                                                            <div className='text-light' style={{ position: 'absolute', left: '20%', top: '20%', fontSize: '2rem', textAlign: 'center' }}>
-                                                                P
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='col row'>
-                                                        <div className='col-12 cormorant-bold'>
-                                                            Nama
-                                                        </div>
-                                                        <div className='w-100 border-bottom' />
-                                                        <div className='col-12 cormorant-light'>
-                                                            <div className="row align-items-center h-100">
-                                                                <div className="col text-warning">
-                                                                    asdadads
-                                                                </div>
-                                                                <div className="col text-right" style={{ fontSize: '.8rem' }}>
-                                                                    Datang
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="card rounded-lg my-3">
-                                    <div className="card-body text-center">
-                                        <span className="cormorant-bold" style={{ fontSize: '1.5rem' }}>
-                                            Buku Tamu & Ucapan
-                                        </span>
-                                        <br />
-                                        <span className="cormorant-semibold" style={{ fontSize: '.8rem' }}>
-                                            DOA RESTU ANDA MERUPAKAN KARUNIA YANG SANGAT BERARTI BAGI KAMI.
-                                        </span>
-                                    </div>
-                                    <div className="card-body">
-                                        <form>
-                                            <div className="input-group mb-3">
-                                                <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="name"><i className="fa fa-user" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input type="text" className="form-control cormorant-light" placeholder="Masukkan Nama Anda" />
-                                            </div>
-
-                                            <div className="form-group">
-                                                <textarea className="form-control cormorant-light" id="ucapan" rows={3} placeholder={'Masukkan Ucapan dan Doa anda'}></textarea>
-                                            </div>
-
-                                            <div className="form-group">
-                                                <button className="btn cormorant-regular btn-block rounded-pill btn-success">Kirim ucapan</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div> */}
                             </motion.div>
                         </div>
                     </div>

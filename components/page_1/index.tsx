@@ -17,10 +17,9 @@ export default function Page1({ setOpened, playAudio }: any) {
 
     useEffect(() => {
         const queryString = window.location.search;
-        console.log(queryString);
         const urlParams = new URLSearchParams(queryString);
         const Tamu = urlParams.get("to");
-        setBukuTamu(Tamu || "");
+        setBukuTamu(Tamu || "-");
     }, [])
     return (
         <>

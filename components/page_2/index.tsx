@@ -12,33 +12,13 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
+import { upVariants, leftVariants, rightVariants } from '../HoverStyle';
+
 export default function Page2() {
 
     const upVariants = {
         onscreen: {
             y: [-200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
-    }
-
-    const leftVariants = {
-        onscreen: {
-            x: [-200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
-    }
-
-    const rightVariants = {
-        onscreen: {
-            x: [200, 0], opacity: [0, 1],
             transition: {
                 duration: 1,
                 ease: "easeOut"

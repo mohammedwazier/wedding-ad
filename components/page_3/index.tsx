@@ -5,52 +5,9 @@ import BungaDown from '@/assets/images/Bunga - 2.png';
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
+import { upVariants, downVariants, rightVariants, leftVariants } from '../HoverStyle';
 
 export default function Page3() {
-
-    const upVariants = {
-        onscreen: {
-            y: [-200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
-    }
-
-    const downVariants = {
-        onscreen: {
-            y: [200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
-    }
-
-    const leftVariants = {
-        onscreen: {
-            x: [-200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
-    }
-
-    const rightVariants = {
-        onscreen: {
-            x: [200, 0], opacity: [0, 1],
-            transition: {
-                duration: 1,
-                ease: "easeOut"
-            }
-        },
-        offscreen: { opacity: 0 }
-    }
 
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
