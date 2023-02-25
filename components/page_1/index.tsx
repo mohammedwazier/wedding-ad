@@ -6,28 +6,52 @@ import { motion } from 'framer-motion';
 
 import IconAD from '@/assets/images/Icon-AD-New.png';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 
 
 
 export default function Page1({ setOpened, playAudio }: any) {
     const [btn, setBtn] = useState(false);
+    const [fullPage, setFullPage] = useState(false);
+    const [scroll, setScroll] = useState(true);
     const [bukuTamu, setBukuTamu] = useState("");
+    const [height, setHeight] = useState(false);
+    const elementHeight = useRef<HTMLDivElement>(null);
+    const wrapperHeight = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const Tamu = urlParams.get("to");
         setBukuTamu(Tamu || "-");
-    }, [])
+    }, []);
+
+    useLayoutEffect(() => {
+        if (!height) {
+            let wrapper = 0;
+            let element = 0;
+            if (elementHeight.current) {
+                element = elementHeight.current.offsetHeight
+            }
+            if (wrapperHeight.current) {
+                wrapper = wrapperHeight.current.offsetHeight;
+            }
+
+            if (element > wrapper) {
+                setFullPage(false);
+            }
+
+            setHeight(true);
+        }
+    }, [height]);
     return (
         <>
             <Head>
                 <title>Wedding Arin Ayudiastika and Diana Yusup</title>
             </Head>
-            <div id="page_1" className={`w-100 mx-auto position-relative h-auto vh-100 text-dark`} style={{ position: 'relative', zIndex: '25', overflowY: !btn ? 'auto' : 'hidden' }}>
-                <div className=' position-relative h-auto min-vh-100 background-paper' style={{ overflow: 'hidden' }}>
+            <div ref={wrapperHeight} id="page_1" className={`w-100 mx-auto position-relative h-auto ${fullPage ? '' : 'vh-100'} text-dark`} style={{ position: 'relative', zIndex: '25', overflowY: scroll ? 'auto' : 'hidden' }}>
+                <div ref={elementHeight} className=' position-relative h-auto min-vh-100 background-paper' style={{ overflow: 'hidden' }}>
                     <Image src={BungaTop} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', right: '-1rem', top: '-1rem', zIndex: 1 }} />
                     <Image src={BungaDown} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', left: '-1rem', bottom: '-1rem', zIndex: 1 }} />
                     <div className='position-relative h-100'>
@@ -52,7 +76,8 @@ export default function Page1({ setOpened, playAudio }: any) {
                                                 }}
                                                 transition={{ duration: 1 }}
                                             >
-                                                <Image src={IconAD} alt={'Arin & Yusup'} width={350} height={277} />
+                                                {/* <Image src={IconAD} alt={'Arin & Yusup'} width={350} height={277} /> */}
+                                                <img src={IconAD.src} style={{ width: '75%' }} />
                                             </motion.div>
                                             <div className='als-script text-grey mt-5 position-relative mx-auto d-flex justify-content-around' style={{ fontSize: '4rem', width: '70%' }}>
                                                 <motion.div
@@ -80,22 +105,20 @@ export default function Page1({ setOpened, playAudio }: any) {
                                             <motion.div
                                                 animate={{ y: [100, 0], opacity: [0, 1] }}
                                                 transition={{ ease: "easeOut", duration: 1 }}
+                                                style={{ marginBottom: '1rem' }}
                                             >
                                                 <span className='cormorant-semibold'>TO:</span>
                                                 <br />
                                                 <span className='cormorant-bold' style={{ fontSize: '1.3rem' }}>{bukuTamu}</span>
                                             </motion.div>
-                                            <>
-                                                <br />
-                                                <br />
-                                            </>
-                                            <br />
                                             <motion.div
                                                 animate={{ scale: [1.5, 1], opacity: [0, 1] }}
                                                 transition={{ ease: "easeOut", duration: 1.5 }}
                                             >
                                                 <br />
-                                                <span className='' style={{ fontSize: '1.8rem', fontFamily: 'Great Vibes' }}>I heartily invite you to our Wedding</span>
+                                                <div>
+                                                    <span className='' style={{ fontSize: '1.8rem', fontFamily: 'Great Vibes' }}>I heartily invite you to our Wedding</span>
+                                                </div>
                                             </motion.div>
                                             {btn ? <></> : (
                                                 <>
@@ -104,6 +127,8 @@ export default function Page1({ setOpened, playAudio }: any) {
                                                         setOpened(true);
                                                         setBtn(true);
                                                         playAudio();
+                                                        setFullPage(true);
+                                                        setScroll(false);
                                                     }} className='btn btn-sm btn-coklat shadow-sm px-4' style={{ borderRadius: '20px', fontFamily: 'Great Vibes' }}>Buka Undangan</button>
                                                     <br />
                                                     <br />

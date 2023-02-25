@@ -143,7 +143,7 @@ export default function Page4() {
             <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
+                viewport={{ once: true }}
                 className='position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
 
@@ -202,7 +202,7 @@ export default function Page4() {
                                         <button onClick={SendPesan} className='btn btn-block cormorant-regular btn-sm btn-coklat' style={{ borderRadius: '15px' }}>Kirim</button>
                                     </div>
 
-                                    <div className='' style={{ height: '300px', overflowX: 'hidden', overflowY: 'auto', }}>
+                                    <div className='' style={{ maxHeight: '300px', height: 'auto', overflowX: 'hidden', overflowY: 'auto', }}>
                                         {loadComment?.data.map((_v: any, key: Key | null | undefined) => (
                                             <div key={key} className="my-3 card" style={{ borderRadius: '10px' }}>
                                                 <div className='py-2 px-3'>

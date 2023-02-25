@@ -18,7 +18,7 @@ export default function Page5() {
         <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.8 }}
+            viewport={{ once: true }}
             className={`handphone-width mx-auto position-relative h-100 text-dark`}>
             <div className=' position-relative h-100' >
                 <div className='background-paper position-relative h-100'>

@@ -14,7 +14,7 @@ export default function Page3() {
             <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
+                viewport={{ once: true }}
                 className=' position-relative h-100' >
                 <div className='background-paper position-relative h-100'>
 
@@ -25,7 +25,7 @@ export default function Page3() {
                         <div className='row h-100 justify-content-center align-items-center mt-3'>
                             <div className='col-12'>
                                 <motion.div
-                                    // viewport={{ once: true, amount: 0.8 }}
+                                    // viewport={{ once: true }}
                                     variants={upVariants}
                                     className='row justify-content-center'>
                                     <div

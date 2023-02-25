@@ -29,12 +29,10 @@ export default function Page2() {
 
 
     return (
-        <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.8 }}
+        <div
             id="page_2" className={`handphone-width mx-auto position-relative h-100 text-dark`}>
-            <div className=' position-relative h-100'>
+            <div
+                className=' position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
 
                     <Image src={Bunga} width="415" height="87" alt={'Bunga'} style={{ position: 'absolute', zIndex: 1, transform: 'translate(-50%, -70%) rotate(180deg)', left: '50%', top: '35px' }} />
@@ -42,7 +40,11 @@ export default function Page2() {
 
                     <div className='position-relative p-5 h-100 mt-3'>
                         {/* Main */}
-                        <div className='row h-100 align-items-center'>
+                        <motion.div
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ once: true }}
+                            className='row h-100 align-items-center'>
                             <motion.div
                                 variants={upVariants}
 
@@ -116,11 +118,11 @@ export default function Page2() {
                                     </div>
                                 </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 }

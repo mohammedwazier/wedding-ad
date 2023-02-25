@@ -9,7 +9,7 @@ import useSound from 'use-sound';
 import moment from 'moment';
 // import { useRouter } from 'next/router';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import Head from 'next/head';
 
@@ -24,34 +24,25 @@ export default function Home() {
   const AudioDiv = useRef<HTMLDivElement>(null);
   const LottieRef = useRef<any>(null);
 
-  const [play, { pause }] = useSound('audio/from-this-moment.mp3', {
-    soundEnabled: true,
-    interrupt: true,
-    onend: (p: any) => {
-      console.log({ p })
-      console.log('Loop');
-      playingAudio();
-      AudioDiv.current?.click();
+  const [audio, setAudio] = useState<any>(null);
 
-    },
-
-  });
+  useEffect(() => {
+    if (!audio) {
+      const newAudio = new Audio("audio/from-this-moment.mp3");
+      setAudio(newAudio) // only call client
+    }
+  })
 
   const playAudio = () => {
     if (audioPlay === false) {
-      play();
+      audio.play();
       LottieRef.current.play();
       setAudioPlay(true);
     } else {
-      pause();
+      audio.pause();
       LottieRef.current.pause();
       setAudioPlay(false);
     }
-  }
-
-  const playingAudio = () => {
-    play();
-    LottieRef.current.play();
   }
 
   const changePageHide = (value: boolean) => {
@@ -93,7 +84,7 @@ export default function Home() {
         <meta name="twitter:data2" content="1 menit" />
       </Head>
       <div ref={AudioDiv} id="audioElement" className='handphone-width mx-auto position-relative'>
-        <div onClick={playAudio} style={{ position: 'fixed', zIndex: 24, bottom: '1rem', left: '50%', cursor: 'pointer', transform: 'translateX(310%)', width: '3rem', height: '3rem', background: 'rgba(174, 143, 122, .8)', borderRadius: '50%' }}>
+        <div onClick={playAudio} style={{ position: 'fixed', zIndex: 24, bottom: '1rem', left: '50%', cursor: 'pointer', transform: 'translateX(270%)', width: '3rem', height: '3rem', background: 'rgba(174, 143, 122, .8)', borderRadius: '50%' }}>
           <Player
             ref={LottieRef}
             autoplay={false}
