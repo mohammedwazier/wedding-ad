@@ -73,7 +73,7 @@ export default function Page3() {
                                                 WIB
                                             </span>
                                             <p className='my-2 cormorant-semibold'>
-                                                Alamat: Aula Masjid Jami Aliyah, Karawang Barat
+                                                Alamat: Masjid Jami Aliyah, Karawang Barat
                                             </p>
                                         </div>
                                     </div>
