@@ -5,14 +5,14 @@ import Page3 from '@/components/page_3';
 import Page4 from '@/components/page_4';
 import Page5 from '@/components/page_5';
 
-import useSound from 'use-sound';
 import moment from 'moment';
-// import { useRouter } from 'next/router';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import Head from 'next/head';
-// import { useParallaxController } from 'react-scroll-parallax';
+
+import BG from '@/assets/images/bg-auto.jpg';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Home() {
   const origin =
@@ -47,6 +47,14 @@ export default function Home() {
     }
   }
 
+  const resetWindowScrollPosition = useCallback(() => window.scrollTo(0, 0), [])
+
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      resetWindowScrollPosition()
+    }
+  }, [resetWindowScrollPosition])
+
   const changePageHide = (value: boolean) => {
     document.getElementsByTagName("body")[0].style.overflow = "auto";
     setTimeout(() => {
@@ -55,6 +63,10 @@ export default function Home() {
       })
     }, 500)
   }
+
+  const { scrollYProgress } = useScroll();
+  const y1 = useTransform(scrollYProgress, [0, 1], ["20%", "0%"]);
+
   return (
     <>
       <Head>
@@ -85,23 +97,37 @@ export default function Home() {
         <meta name="twitter:label2" content="Time to read" />
         <meta name="twitter:data2" content="1 menit" />
       </Head>
-      <div className=''>
-      </div>
-      <div ref={AudioDiv} id="audioElement" className='handphone-width mx-auto position-relative'>
-        <div onClick={playAudio} style={{ position: 'fixed', zIndex: 24, bottom: '1rem', left: '50%', cursor: 'pointer', transform: 'translateX(270%)', width: '3rem', height: '3rem', background: 'rgba(174, 143, 122, .8)', borderRadius: '50%' }}>
-          <Player
-            ref={LottieRef}
-            autoplay={false}
-            loop
-            src="https://assets3.lottiefiles.com/packages/lf20_fq0gutyi.json"
-            style={{ width: '2rem', height: '2rem', transform: 'translateX(0%) translateY(20%)' }}
-          />
+
+      <div ref={AudioDiv} id="audioElement" className='wh-100 mx-auto position-relative'>
+        <motion.div style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+          // left: '-10rem',
+          top: '-10%',
+          overflow: 'hidden',
+          scale: 1.5,
+          y: y1,
+
+        }}>
+          <img src={BG.src} style={{ width: '100vw', height: '100vh', objectFit: 'cover' }} alt='BG' />
+        </motion.div>
+        <div className='handphone-width mx-auto position-relative' style={{ overflowX: 'hidden' }}>
+          <div onClick={playAudio} style={{ position: 'fixed', zIndex: 24, bottom: '1rem', left: '50%', cursor: 'pointer', transform: 'translateX(270%)', width: '3rem', height: '3rem', background: 'rgba(174, 143, 122, .8)', borderRadius: '50%' }}>
+            <Player
+              ref={LottieRef}
+              autoplay={false}
+              loop
+              src="https://assets3.lottiefiles.com/packages/lf20_fq0gutyi.json"
+              style={{ width: '2rem', height: '2rem', transform: 'translateX(0%) translateY(20%)' }}
+            />
+          </div>
+          <Page1 setOpened={changePageHide} playAudio={playAudio} />
+          <Page2 />
+          <Page3 />
+          <Page4 />
+          <Page5 />
         </div>
-        <Page1 setOpened={changePageHide} playAudio={playAudio} />
-        <Page2 />
-        <Page3 />
-        <Page4 />
-        <Page5 />
       </div>
     </>
   )
