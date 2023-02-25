@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import BungaTop from '@/assets/images/top-right-3.svg';
-import BungaDown from '@/assets/images/bottom-left-3.svg';
+import BungaTop from '@/assets/images/top-right-3.png';
+import BungaDown from '@/assets/images/bottom-left-3.png';
 
 import Mask from '@/assets/images/New Prokes/face-mask.png';
 import AntiSeptic from '@/assets/images/New Prokes/antiseptic.png';

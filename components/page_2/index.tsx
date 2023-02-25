@@ -4,7 +4,7 @@
 
 import Bismillah from '@/assets/images/bismillah-1.svg';
 
-import Bunga from '@/assets/images/bottom-2.svg';
+import Bunga from '@/assets/images/bottom-2.png';
 
 import Women from '@/assets/images/w.png';
 import Man from '@/assets/images/l.png';
