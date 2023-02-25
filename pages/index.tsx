@@ -35,6 +35,7 @@ export default function Home() {
   })
 
   const playAudio = () => {
+    audio.loop = true;
     if (audioPlay === false) {
       audio.play();
       LottieRef.current.play();

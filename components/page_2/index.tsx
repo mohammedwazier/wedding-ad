@@ -31,6 +31,7 @@ export default function Page2() {
     return (
         <div
             id="page_2" className={`handphone-width mx-auto position-relative h-100 text-dark`}>
+
             <div
                 className=' position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
