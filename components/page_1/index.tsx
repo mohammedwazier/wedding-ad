@@ -117,7 +117,7 @@ export default function Page1({ setOpened, playAudio }: any) {
                                             >
                                                 <br />
                                                 <div>
-                                                    <span className='' style={{ fontSize: '1.8rem', fontFamily: 'Great Vibes' }}>I heartily invite you to our Wedding</span>
+                                                    <span className='' style={{ fontSize: '1.8rem', fontFamily: 'Great Vibes' }}>Heartily invite you to our Wedding</span>
                                                 </div>
                                             </motion.div>
                                             {btn ? <></> : (
