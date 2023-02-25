@@ -33,7 +33,7 @@ export default function Page3() {
                                         className='col-12 text-center'>
                                         <span className='' style={{ fontSize: '2.5rem', fontFamily: 'Great Vibes' }}>Save the Date</span>
                                         <br />
-                                        <span className='cormorant-regular' style={{ fontSize: '1.5rem' }}>Saturday</span>
+                                        <span className='cormorant-regular' style={{ fontSize: '1.5rem' }}>Sabtu</span>
                                     </div>
                                     <div className='col-12'>
                                         <div className='row'>
