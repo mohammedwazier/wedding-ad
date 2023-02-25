@@ -12,6 +12,7 @@ import moment from 'moment';
 import { useEffect, useRef, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import Head from 'next/head';
+// import { useParallaxController } from 'react-scroll-parallax';
 
 export default function Home() {
   const origin =
@@ -83,6 +84,8 @@ export default function Home() {
         <meta name="twitter:label2" content="Time to read" />
         <meta name="twitter:data2" content="1 menit" />
       </Head>
+      <div className=''>
+      </div>
       <div ref={AudioDiv} id="audioElement" className='handphone-width mx-auto position-relative'>
         <div onClick={playAudio} style={{ position: 'fixed', zIndex: 24, bottom: '1rem', left: '50%', cursor: 'pointer', transform: 'translateX(270%)', width: '3rem', height: '3rem', background: 'rgba(174, 143, 122, .8)', borderRadius: '50%' }}>
           <Player

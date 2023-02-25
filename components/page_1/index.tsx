@@ -100,7 +100,7 @@ export default function Page1({ setOpened, playAudio }: any) {
                                                 </motion.div>
                                             </div>
                                         </div>
-                                        <div className='col-12 text-center text-grey align-items-end position-relative' style={{ zIndex: 23 }}>
+                                        <div className='col-12 text-center text-grey align-items-end position-relative pb-5' style={{ zIndex: 23 }}>
                                             <br />
                                             <motion.div
                                                 animate={{ y: [100, 0], opacity: [0, 1] }}
