@@ -1,3 +1,4 @@
+'use client'
 /* eslint-disable react-hooks/exhaustive-deps */
 import Page1 from '@/components/page_1';
 // import Page2 from '@/components/page_2';
