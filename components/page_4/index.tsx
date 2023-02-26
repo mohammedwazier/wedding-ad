@@ -221,7 +221,7 @@ export default function Page4() {
                                                         <small>
                                                             <i className="fa fa-clock-o" style={{ fontSize: '10px' }} />
                                                             &nbsp;
-                                                            {moment(_v.created_at).format('LL')}
+                                                            {moment.tz(_v.created_at, 'Asia/Jakarta').format('LL')}
                                                             {/* &nbsp;
                                                             {_v.status_kehadiran === 'hadir' ? <small className='text-primary'>Hadir</small> : <small className='text-danger'>Tidak Hadir</small>} */}
                                                         </small>
