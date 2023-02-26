@@ -10,7 +10,7 @@ import UnVerified from '@/assets/images/un-verified.png';
 
 import { upVariants, downVariants } from '../HoverStyle';
 
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Image from 'next/image';
 
 import Swal from 'sweetalert2';
@@ -221,9 +221,9 @@ export default function Page4() {
                                                         <small>
                                                             <i className="fa fa-clock-o" style={{ fontSize: '10px' }} />
                                                             &nbsp;
-                                                            {moment(_v.created_at).startOf('hour').fromNow()}
-                                                            &nbsp;
-                                                            {_v.status_kehadiran === 'hadir' ? <small className='text-primary'>Hadir</small> : <small className='text-danger'>Tidak Hadir</small>}
+                                                            {moment(_v.created_at).format('LL')}
+                                                            {/* &nbsp;
+                                                            {_v.status_kehadiran === 'hadir' ? <small className='text-primary'>Hadir</small> : <small className='text-danger'>Tidak Hadir</small>} */}
                                                         </small>
                                                     </div>
 
