@@ -21,10 +21,6 @@ const Page3 = dynamic(() => import('@/components/page_3'));
 const Page4 = dynamic(() => import('@/components/page_4'));
 const Page5 = dynamic(() => import('@/components/page_5'));
 
-export const config = {
-  unstable_runtimeJS: false
-}
-
 export default function Home() {
   const origin =
     typeof window !== 'undefined' && window.location.origin
