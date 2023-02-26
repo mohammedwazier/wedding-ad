@@ -109,6 +109,7 @@ export default function Home() {
         <meta name="msapplication-TileImage" content={`${origin}/header.jpeg`} />
         <link rel="apple-touch-icon" href={`${origin}/header.jpeg`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Wedding Arin Ayudiastika and Diana Yusup</title>
       </Head>
 
       <div ref={AudioDiv} id="audioElement" className='wh-100 mx-auto position-relative'>
