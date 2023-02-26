@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import BungaTop from '@/assets/images/Bunga - 1.png';
-import BungaDownNew from '@/assets/images/bottom-2-up.png';
+import Bunga from '@/assets/images/bottom-2.png';
 import BungaDown from '@/assets/images/Bunga - 2.png';
 import Image from 'next/image';
 
@@ -20,7 +19,9 @@ export default function Page3() {
                 <div className='background-paper position-relative h-100'>
 
                     <div className='position-relative p-3 h-100' style={{ overflow: 'hidden' }}>
-                        <Image src={BungaTop} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', right: 0, top: 0, zIndex: 0 }} />
+                        {/* <Image src={BungaTop} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', right: 0, top: 0, zIndex: 0 }} /> */}
+
+                        <Image src={Bunga} width="415" height="87" alt={'Bunga'} style={{ position: 'absolute', zIndex: 1, transform: 'translate(-50%, -70%) rotate(180deg)', left: '50%', top: '35px' }} />
                         {/* <Image src={BungaDownNew} width="415" height="87" alt={'Bunga'} style={{ position: 'absolute', zIndex: 1, transform: 'translate(-50%, 60%) rotate(180deg)', left: '50%', bottom: '27px' }} /> */}
                         {/* <Image src={BungaDownNew} width="415" height="87" alt={'Bunga'} style={{ position: 'absolute', zIndex: 1, transform: 'translate(-50%, -70%) ', left: 0, top: 0 }} /> */}
                         <Image src={BungaDown} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', left: 0, bottom: 0, zIndex: 0 }} />
