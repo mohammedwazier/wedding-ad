@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-// import Page1 from '@/components/page_1';
-// import Page2 from '@/components/page_2';
-// import Page3 from '@/components/page_3';
-// import Page4 from '@/components/page_4';
-// import Page5 from '@/components/page_5';
+import Page1 from '@/components/page_1';
+import Page2 from '@/components/page_2';
+import Page3 from '@/components/page_3';
+import Page4 from '@/components/page_4';
+import Page5 from '@/components/page_5';
 
 import moment from 'moment';
 
@@ -15,11 +15,11 @@ import Head from 'next/head';
 import { useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-const Page1 = dynamic(() => import('@/components/page_1'));
-const Page2 = dynamic(() => import('@/components/page_2'));
-const Page3 = dynamic(() => import('@/components/page_3'));
-const Page4 = dynamic(() => import('@/components/page_4'));
-const Page5 = dynamic(() => import('@/components/page_5'));
+// const Page1 = dynamic(() => import('@/components/page_1'));
+// const Page2 = dynamic(() => import('@/components/page_2'));
+// const Page3 = dynamic(() => import('@/components/page_3'));
+// const Page4 = dynamic(() => import('@/components/page_4'));
+// const Page5 = dynamic(() => import('@/components/page_5'));
 
 export default function Home() {
   const origin =
