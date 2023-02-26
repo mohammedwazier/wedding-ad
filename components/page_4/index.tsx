@@ -151,7 +151,7 @@ export default function Page4() {
                         autoplay
                         loop
                         src="https://assets5.lottiefiles.com/packages/lf20_kotaolcw.json"
-                        style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-10%' }}
+                        style={{ width: '100%', height: '200px', position: 'absolute', zIndex: 1, bottom: '-6%' }}
                     />
 
                     <div className='position-relative p-3 p-md-5 h-100' style={{ zIndex: 2 }}>

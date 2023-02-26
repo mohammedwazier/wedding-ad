@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import BungaTop from '@/assets/images/Bunga - 1.png';
+import BungaDownNew from '@/assets/images/bottom-2-up.png';
 import BungaDown from '@/assets/images/Bunga - 2.png';
 import Image from 'next/image';
 
@@ -19,8 +20,10 @@ export default function Page3() {
                 <div className='background-paper position-relative h-100'>
 
                     <div className='position-relative p-3 h-100' style={{ overflow: 'hidden' }}>
-                        <Image src={BungaTop} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', right: '-1rem', top: '-1rem', zIndex: 1 }} />
-                        <Image src={BungaDown} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', left: '-1rem', bottom: '-1rem', zIndex: 1 }} />
+                        <Image src={BungaTop} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', right: 0, top: 0, zIndex: 0 }} />
+                        {/* <Image src={BungaDownNew} width="415" height="87" alt={'Bunga'} style={{ position: 'absolute', zIndex: 1, transform: 'translate(-50%, 60%) rotate(180deg)', left: '50%', bottom: '27px' }} /> */}
+                        {/* <Image src={BungaDownNew} width="415" height="87" alt={'Bunga'} style={{ position: 'absolute', zIndex: 1, transform: 'translate(-50%, -70%) ', left: 0, top: 0 }} /> */}
+                        <Image src={BungaDown} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', left: 0, bottom: 0, zIndex: 0 }} />
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center mt-3'>
                             <div className='col-12'>
@@ -103,14 +106,14 @@ export default function Page3() {
                             <div className='w-100 my-2' />
                             <div className='col-md-8 col-sm-8 col-12'>
 
-                                <div className='rounded-lg my-3'>
+                                <div className='rounded-lg my-3' style={{ zIndex: '2', position: 'relative', }}>
                                     <motion.div
                                         variants={downVariants}
                                     >
                                         {/* <center className='cormorant-regular'><b>Maps</b></center> */}
                                         {/* <hr className='my-1' /> */}
-                                        <div className='position-relative'>
-                                            <div className="mapouter" style={{ border: '5px solid #C39379' }}>
+                                        <div className='position-relative rounded-lg' style={{ background: '#C39379', borderRadius: '1rem' }}>
+                                            <div className="mapouter" style={{ border: '5px solid #C39379', borderRadius: '1rem' }}>
                                                 <div className="gmap_canvas">
                                                     <iframe width="100%" height="100%" id="gmap_canvas" frameBorder={0} scrolling={'no'} src="https://maps.google.com/maps?q=Masjid Jami Aliyah, Jl. International Karawang Barat No KM.03&t=&z=13&ie=UTF8&iwloc=&output=embed" />
                                                 </div>

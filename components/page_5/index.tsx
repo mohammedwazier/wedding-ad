@@ -24,8 +24,10 @@ export default function Page5() {
                 <div className='background-paper position-relative h-100'>
 
                     <div className='position-relative p-3 p-md-5 h-100' style={{ overflow: 'hidden' }}>
-                        <Image src={BungaTop} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', right: '-5%', top: '-5%', zIndex: 1 }} />
-                        <Image src={BungaDown} width="160" height="160" alt={'Bunga'} style={{ position: 'absolute', left: '-12%', bottom: '-5%', zIndex: 1 }} />
+                        <Image width="160" height="295" src={BungaTop} alt={'Bunga'} style={{ position: 'absolute', right: '.5rem', top: '.5rem', zIndex: 0 }} />
+                        <Image width="160" height="295" src={BungaDown} alt={'Bunga'} style={{ position: 'absolute', left: '.5rem', bottom: '.5rem', zIndex: 0 }} />
+                        {/* <img src={BungaTop.src} alt={'Bunga'} style={{ width: '10rem', height: 'auto', position: 'absolute', right: '-5%', top: '-5%', zIndex: 1 }} /> */}
+                        {/* <img src={BungaDown.src} alt={'Bunga'} style={{ width: '10rem', height: 'auto', position: 'absolute', left: '-12%', bottom: '-5%', zIndex: 1 }} /> */}
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center'>
                             <div className='col-12'>
