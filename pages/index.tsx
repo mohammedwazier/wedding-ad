@@ -11,8 +11,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import Head from 'next/head';
 
-import BG from '@/assets/images/bg-auto.jpg';
-import { motion, useScroll, useTransform } from 'framer-motion';
+// import BG from '@/assets/images/bg-auto.jpg';
+import { useScroll, useTransform } from 'framer-motion';
+// import dynamic from 'next/dynamic';
+
+// const Page1Dynamic = dynamic(Page1);
 
 export default function Home() {
   const origin =
@@ -99,7 +102,7 @@ export default function Home() {
       </Head>
 
       <div ref={AudioDiv} id="audioElement" className='wh-100 mx-auto position-relative'>
-        <motion.div style={{
+        {/* <motion.div style={{
           position: 'fixed',
           width: '100vw',
           height: '100vh',
@@ -111,7 +114,7 @@ export default function Home() {
 
         }}>
           <img src={BG.src} style={{ width: '100vw', height: '100vh', objectFit: 'cover' }} alt='BG' />
-        </motion.div>
+        </motion.div> */}
         <div className='handphone-width mx-auto position-relative' style={{ overflowX: 'hidden' }}>
           <div onClick={playAudio} style={{ position: 'fixed', zIndex: 24, bottom: '1rem', left: '50%', cursor: 'pointer', transform: 'translateX(270%)', width: '3rem', height: '3rem', background: 'rgba(174, 143, 122, .8)', borderRadius: '50%' }}>
             <Player
