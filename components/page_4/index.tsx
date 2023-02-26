@@ -10,12 +10,12 @@ import UnVerified from '@/assets/images/un-verified.png';
 
 import { upVariants, downVariants } from '../HoverStyle';
 
-import moment from 'moment-timezone';
+import moment from 'moment';
 import Image from 'next/image';
 
 import Swal from 'sweetalert2';
 
-moment.locale('id');
+// moment.locale('id');
 
 export default function Page4() {
     const [loadComment, setLoadComment] = useState<any>({
@@ -221,7 +221,8 @@ export default function Page4() {
                                                         <small>
                                                             <i className="fa fa-clock-o" style={{ fontSize: '10px' }} />
                                                             &nbsp;
-                                                            {moment.tz(_v.created_at, 'Asia/Jakarta').format('LL')}
+                                                            {/* {moment.tz(_v.created_at, 'Asia/Jakarta').format('LL')} */}
+                                                            {moment(_v.created_at).utcOffset(0).format('LLL')}
                                                             {/* &nbsp;
                                                             {_v.status_kehadiran === 'hadir' ? <small className='text-primary'>Hadir</small> : <small className='text-danger'>Tidak Hadir</small>} */}
                                                         </small>

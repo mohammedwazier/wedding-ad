@@ -105,7 +105,10 @@ export default function Home() {
         <meta name="twitter:data1" content="arinayudiastika" />
         <meta name="twitter:label2" content="Time to read" />
         <meta name="twitter:data2" content="1 menit" />
-        <link rel="icon" type="image/png" href="/header.jpeg"></link>
+        <link rel="icon" type="image/png" href="/header.jpeg" />
+        <meta name="msapplication-TileImage" content={`${origin}/header.jpeg`} />
+        <link rel="apple-touch-icon" href={`${origin}/header.jpeg`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Head>
 
       <div ref={AudioDiv} id="audioElement" className='wh-100 mx-auto position-relative'>
