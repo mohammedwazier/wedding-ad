@@ -89,6 +89,7 @@ export default function Home() {
         <meta property="article:section" content="Customer" />
         <meta property="og:updated_time" content={moment().format()} />
         <meta property="og:image" content={`${origin}/header.jpeg`} />
+        <meta property="og:image:url" content={`${origin}/header.jpeg`} />
         <meta property="og:image:secure_url" content={`${origin}/header.jpeg`} />
         <meta property="og:image:width" content="500" />
         <meta property="og:image:height" content="500" />
