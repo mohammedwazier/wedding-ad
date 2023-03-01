@@ -4,17 +4,11 @@ import Bunga from '@/assets/images/bottom-2.png';
 import BungaDown from '@/assets/images/Bunga - 2.png';
 import Image from 'next/image';
 
-// import { motion } from 'framer-motion';
-// import { upVariants, downVariants, rightVariants, leftVariants } from '../HoverStyle';
-
 export default function Page3() {
 
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
             <div
-                // initial="offscreen"
-                // whileInView="onscreen"
-                // viewport={{ once: true }}
                 className=' position-relative h-100' >
                 <div className='background-paper position-relative h-100'>
 
@@ -29,11 +23,8 @@ export default function Page3() {
                         <div className='row h-100 justify-content-center align-items-center mt-3'>
                             <div className='col-12'>
                                 <div
-                                    // viewport={{ once: true }}
-                                    // variants={upVariants}
                                     className='row justify-content-center wow bounceInDown' data-wow-duration="1s">
                                     <div
-                                        // variants={upVariants}
                                         className='col-12 text-center'>
                                         <span className='' style={{ fontSize: '2.5rem', fontFamily: 'Great Vibes' }}>Save the Date</span>
                                         <br />
@@ -54,23 +45,16 @@ export default function Page3() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* <div className='d-block d-md-none text-center als-script'>
-                                        <h1 style={{ fontSize: '4rem', lineHeight: .5 }}>04 03 2023</h1>
-                                    </div> */}
                                 </div>
                             </div>
                         </div>
                         <div className='row mt-4 justify-content-center align-items-center'>
                             <div
-                                // variants={leftVariants}
                                 className='col-12 my-2 text-center wow slideInLeft'>
                                 <div style={{ background: '#AE8F7A', color: '#FFF', borderRadius: '20px' }} className="shadow-lg">
                                     <div className='p-3'>
                                         <span className='' style={{ fontSize: '3rem', fontFamily: 'Great Vibes' }}>Akad</span>
                                         <div className=''>
-                                            {/* <i className="fa fa-clock-o"></i> */}
-                                            {/* <br /> */}
                                             <span className='cormorant-regular'>
                                                 <span style={{ fontSize: '1.8rem' }}>10:00</span>
                                                 &nbsp;
@@ -84,14 +68,11 @@ export default function Page3() {
                                 </div>
                             </div>
                             <div
-                                // variants={rightVariants}
                                 className='col-12 my-2 text-center wow slideInRight'>
                                 <div style={{ background: '#AE8F7A', color: '#FFF', borderRadius: '20px' }} className="shadow-lg">
                                     <div className='p-3'>
                                         <span className='' style={{ fontSize: '3rem', fontFamily: 'Great Vibes' }}>Resepsi</span>
                                         <div className=''>
-                                            {/* <i className="fa fa-clock-o"></i> */}
-                                            {/* <br /> */}
                                             <span className='cormorant-regular'>
                                                 <span style={{ fontSize: '1.8rem' }}>11:00 - 15:00</span>
                                                 &nbsp;
@@ -110,10 +91,7 @@ export default function Page3() {
                                 <div className='rounded-lg my-3' style={{ zIndex: '2', position: 'relative', }}>
                                     <div
                                         className='wow slideInDown'
-                                    // variants={downVariants}
                                     >
-                                        {/* <center className='cormorant-regular'><b>Maps</b></center> */}
-                                        {/* <hr className='my-1' /> */}
                                         <div className='position-relative rounded-lg' style={{ background: '#C39379', borderRadius: '1rem' }}>
                                             <div className="mapouter" style={{ border: '5px solid #C39379', borderRadius: '1rem' }}>
                                                 <div className="gmap_canvas">
@@ -132,8 +110,6 @@ export default function Page3() {
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

@@ -2,20 +2,15 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Player } from '@lottiefiles/react-lottie-player';
-import { motion } from 'framer-motion';
 import { Key, useEffect, useState } from 'react';
 
 import Verified from '@/assets/images/verified.png';
 import UnVerified from '@/assets/images/un-verified.png';
 
-import { upVariants, downVariants } from '../HoverStyle';
-
 import moment from 'moment';
 import Image from 'next/image';
 
 import Swal from 'sweetalert2';
-
-// moment.locale('id');
 
 export default function Page4() {
     const [loadComment, setLoadComment] = useState<any>({
@@ -23,8 +18,6 @@ export default function Page4() {
         prev_page_url: null,
         next_page_url: null,
     });
-
-    const [bukuTamu, setBukuTamu] = useState("");
 
     const [loading, setLoading] = useState(true);
 
@@ -120,7 +113,6 @@ export default function Page4() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const Tamu = urlParams.get("to");
-            setBukuTamu(Tamu || "-");
             setMessage({
                 ...message,
                 name_params: Tamu || "-"
@@ -138,7 +130,6 @@ export default function Page4() {
                 const response = await getListData.json();
 
                 setLoadComment(response);
-                // console.log(response);
                 setLoad(!load);
                 setLoading(false);
             })();
@@ -148,9 +139,6 @@ export default function Page4() {
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
             <div
-                // initial="offscreen"
-                // whileInView="onscreen"
-                // viewport={{ once: true }}
                 className='position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
 
@@ -165,7 +153,6 @@ export default function Page4() {
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center'>
                             <div
-                                // variants={upVariants}
                                 className='col-12 wow slideInUp'>
                                 <div className='row justify-content-center'>
                                     <div className='col-12 text-center'>
@@ -184,7 +171,6 @@ export default function Page4() {
                         </div>
                         <div className='row mt-4 justify-content-center'>
                             <div
-                                // variants={downVariants}
                                 className='col-12 wow slideInUp'>
                                 <div className='p-3' style={{ borderRadius: '10px', border: '1px solid rgba(174, 143, 122, 1)', background: 'rgba(174, 143, 122, .5)' }}>
                                     <small style={{ fontSize: '.7rem' }} className="text-muted">*NB: Diharapkan tidak mencantumkan Emoticon saat mengisi Ucapan.</small>

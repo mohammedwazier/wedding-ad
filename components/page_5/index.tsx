@@ -10,15 +10,10 @@ import Social from '@/assets/images/New Prokes/distance.png';
 import LBelakang from '@/assets/images/l-belakang.jpg';
 import WBelakang from '@/assets/images/w-belakang.jpg';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { upVariants, downVariants, rightVariants, leftVariants } from '../HoverStyle';
 
 export default function Page5() {
     return (
-        <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true }}
+        <div
             className={`handphone-width mx-auto position-relative h-100 text-dark`}>
             <div className=' position-relative h-100' >
                 <div className='background-paper position-relative h-100'>
@@ -26,28 +21,23 @@ export default function Page5() {
                     <div className='position-relative p-3 p-md-5 h-100' style={{ overflow: 'hidden' }}>
                         <Image width="160" height="295" src={BungaTop} alt={'Bunga'} style={{ position: 'absolute', right: '.5rem', top: '.5rem', zIndex: 0 }} />
                         <Image width="160" height="295" src={BungaDown} alt={'Bunga'} style={{ position: 'absolute', left: '.5rem', bottom: '.5rem', zIndex: 0 }} />
-                        {/* <img src={BungaTop.src} alt={'Bunga'} style={{ width: '10rem', height: 'auto', position: 'absolute', right: '-5%', top: '-5%', zIndex: 1 }} /> */}
-                        {/* <img src={BungaDown.src} alt={'Bunga'} style={{ width: '10rem', height: 'auto', position: 'absolute', left: '-12%', bottom: '-5%', zIndex: 1 }} /> */}
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center'>
                             <div className='col-12'>
                                 <div className='row justify-content-center mt-4'>
                                     <div className='position-relative d-flex'>
                                         <div
-                                            // variants={leftVariants}
                                             className='wow slideInLeft'
                                         >
                                             <Image width="100" height="100" alt="Yusup" className='shadow-sm' src={LBelakang} style={{ width: '100px', border: '1px solid #AE8F7A', borderRadius: '50%' }} />
                                         </div>
                                         <div
-                                            // variants={rightVariants}
                                             className='wow slideInRight'
                                         >
                                             <Image width="100" height="100" alt="Arin" className='shadow-sm' src={WBelakang} style={{ width: '100px', border: '1px solid #AE8F7A', borderRadius: '50%' }} />
                                         </div>
                                     </div>
                                     <div
-                                        // variants={upVariants}
                                         className='wow slideInUp col-11 mt-4 text-center cormorant-regular position-relative' style={{ zIndex: '2' }} >
                                         Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/Saudari berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
                                         <br />
@@ -56,7 +46,6 @@ export default function Page5() {
                                         <span style={{ fontFamily: 'Great Vibes', color: '#947a68', fontSize: '2rem' }}>Arin & Yusup</span>
                                     </div>
                                     <div
-                                        // variants={downVariants}
                                         className='wow slideInUp col-12 mb-4 mt-2'>
                                         <div className='rounded-lg position-relative' style={{ background: 'rgba(174, 143, 122, .7)', color: '#FFF', zIndex: 2 }}>
                                             <div className='card-body cormorant-light text-center' style={{ fontSize: '.8rem' }}>
@@ -69,7 +58,6 @@ export default function Page5() {
                                     </div>
 
                                     <div
-                                        // variants={downVariants}
                                         className='wow slideInDown col-12 position-relative w-100 mb-4 pb-4 mt-3' style={{ zIndex: 4 }}>
                                         <div className='row text-center justify-content-center'>
                                             <div className='col'>
@@ -107,6 +95,6 @@ export default function Page5() {
 
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 }

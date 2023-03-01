@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import BungaTop from '@/assets/images/Bunga - 1.png';
-import { motion } from 'framer-motion';
 
 import IconAD from '@/assets/images/Icon-AD-New.png';
 import Image from 'next/image';
 import BungaDownNew from '@/assets/images/bottom-2-up.png';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Page1({ setOpened, playAudio }: any) {
     const [btn, setBtn] = useState(false);
@@ -59,19 +58,12 @@ export default function Page1({ setOpened, playAudio }: any) {
                                 <div className='col-12'>
                                     <div className='row justify-content-center h-100'>
                                         <div
-                                            // initial={{ opacity: 0 }}
-                                            // animate={{ opacity: 1 }}
-                                            // transition={{ ease: "ease", duration: 2 }}
                                             className='col-12 text-center cormorant-semibold text-grey align-items-start wow bounceInDown' style={{ paddingTop: '15%' }}>
                                             <h3>The Wedding Of</h3>
                                         </div>
                                         <div className='col-12 text-center mb-3'>
                                             <div
                                                 className='wow bounceInDown'
-                                            // animate={{
-                                            //     scale: [0, 1.2, 1, 1],
-                                            // }}
-                                            // transition={{ duration: 1 }}
                                             >
                                                 {/* <Image src={IconAD} alt={'Arin & Yusup'} width={350} height={277} /> */}
                                                 <img src={IconAD.src} style={{ width: '75%' }} />
@@ -79,22 +71,16 @@ export default function Page1({ setOpened, playAudio }: any) {
                                             <div className='als-script text-grey mt-5 position-relative mx-auto d-flex justify-content-around' style={{ fontSize: '4rem', width: '70%' }}>
                                                 <div
                                                     className='wow slideInLeft'
-                                                    // animate={{ x: [-100, 0], opacity: [0, 1] }}
-                                                    // transition={{ ease: "easeOut", duration: 1 }}
                                                     style={{ background: '#AE8F7A', padding: '3px 15px', color: '#FFF', borderRadius: '20px' }}>
                                                     04
                                                 </div>
                                                 <div
                                                     className='wow slideInLeft'
-                                                    // animate={{ x: [-100, 0], opacity: [0, 1] }}
-                                                    // transition={{ ease: "easeOut", duration: 1 }}
                                                     style={{ background: '#AE8F7A', padding: '3px 15px', color: '#FFF', borderRadius: '20px' }}>
                                                     03
                                                 </div>
                                                 <div
                                                     className='wow slideInLeft'
-                                                    // animate={{ x: [-100, 0], opacity: [0, 1] }}
-                                                    // transition={{ ease: "easeOut", duration: 1 }}
                                                     style={{ background: '#AE8F7A', padding: '3px 15px', color: '#FFF', borderRadius: '20px' }}>
                                                     23
                                                 </div>
@@ -104,8 +90,6 @@ export default function Page1({ setOpened, playAudio }: any) {
                                             <br />
                                             <div
                                                 className='wow bounceInUp'
-                                                // animate={{ y: [100, 0], opacity: [0, 1] }}
-                                                // transition={{ ease: "easeOut", duration: 1 }}
                                                 style={{ marginBottom: '1rem' }}
                                             >
                                                 <span className='cormorant-semibold'>TO:</span>
@@ -114,8 +98,6 @@ export default function Page1({ setOpened, playAudio }: any) {
                                             </div>
                                             <div
                                                 className='wow zoomIn'
-                                            // animate={{ scale: [1.5, 1], opacity: [0, 1] }}
-                                            // transition={{ ease: "easeOut", duration: 1.5 }}
                                             >
                                                 <br />
                                                 <div>
