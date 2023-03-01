@@ -58,64 +58,70 @@ export default function Page1({ setOpened, playAudio }: any) {
                                 className='row h-100 justify-content-center'>
                                 <div className='col-12'>
                                     <div className='row justify-content-center h-100'>
-                                        <motion.div
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            transition={{ ease: "ease", duration: 2 }}
-                                            className='col-12 text-center cormorant-semibold text-grey align-items-start' style={{ paddingTop: '15%' }}>
+                                        <div
+                                            // initial={{ opacity: 0 }}
+                                            // animate={{ opacity: 1 }}
+                                            // transition={{ ease: "ease", duration: 2 }}
+                                            className='col-12 text-center cormorant-semibold text-grey align-items-start wow bounceInDown' style={{ paddingTop: '15%' }}>
                                             <h3>The Wedding Of</h3>
-                                        </motion.div>
+                                        </div>
                                         <div className='col-12 text-center mb-3'>
-                                            <motion.div
-                                                animate={{
-                                                    scale: [0, 1.2, 1, 1],
-                                                }}
-                                                transition={{ duration: 1 }}
+                                            <div
+                                                className='wow bounceInDown'
+                                            // animate={{
+                                            //     scale: [0, 1.2, 1, 1],
+                                            // }}
+                                            // transition={{ duration: 1 }}
                                             >
                                                 {/* <Image src={IconAD} alt={'Arin & Yusup'} width={350} height={277} /> */}
                                                 <img src={IconAD.src} style={{ width: '75%' }} />
-                                            </motion.div>
+                                            </div>
                                             <div className='als-script text-grey mt-5 position-relative mx-auto d-flex justify-content-around' style={{ fontSize: '4rem', width: '70%' }}>
-                                                <motion.div
-                                                    animate={{ x: [-100, 0], opacity: [0, 1] }}
-                                                    transition={{ ease: "easeOut", duration: 1 }}
+                                                <div
+                                                    className='wow slideInLeft'
+                                                    // animate={{ x: [-100, 0], opacity: [0, 1] }}
+                                                    // transition={{ ease: "easeOut", duration: 1 }}
                                                     style={{ background: '#AE8F7A', padding: '3px 15px', color: '#FFF', borderRadius: '20px' }}>
                                                     04
-                                                </motion.div>
-                                                <motion.div
-                                                    animate={{ x: [-100, 0], opacity: [0, 1] }}
-                                                    transition={{ ease: "easeOut", duration: 1 }}
+                                                </div>
+                                                <div
+                                                    className='wow slideInLeft'
+                                                    // animate={{ x: [-100, 0], opacity: [0, 1] }}
+                                                    // transition={{ ease: "easeOut", duration: 1 }}
                                                     style={{ background: '#AE8F7A', padding: '3px 15px', color: '#FFF', borderRadius: '20px' }}>
                                                     03
-                                                </motion.div>
-                                                <motion.div
-                                                    animate={{ x: [-100, 0], opacity: [0, 1] }}
-                                                    transition={{ ease: "easeOut", duration: 1 }}
+                                                </div>
+                                                <div
+                                                    className='wow slideInLeft'
+                                                    // animate={{ x: [-100, 0], opacity: [0, 1] }}
+                                                    // transition={{ ease: "easeOut", duration: 1 }}
                                                     style={{ background: '#AE8F7A', padding: '3px 15px', color: '#FFF', borderRadius: '20px' }}>
                                                     23
-                                                </motion.div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className='col-12 text-center text-grey align-items-end position-relative pb-5' style={{ zIndex: 23 }}>
                                             <br />
-                                            <motion.div
-                                                animate={{ y: [100, 0], opacity: [0, 1] }}
-                                                transition={{ ease: "easeOut", duration: 1 }}
+                                            <div
+                                                className='wow bounceInUp'
+                                                // animate={{ y: [100, 0], opacity: [0, 1] }}
+                                                // transition={{ ease: "easeOut", duration: 1 }}
                                                 style={{ marginBottom: '1rem' }}
                                             >
                                                 <span className='cormorant-semibold'>TO:</span>
                                                 <br />
                                                 <span className='cormorant-bold' style={{ fontSize: '1.3rem' }}>{bukuTamu}</span>
-                                            </motion.div>
-                                            <motion.div
-                                                animate={{ scale: [1.5, 1], opacity: [0, 1] }}
-                                                transition={{ ease: "easeOut", duration: 1.5 }}
+                                            </div>
+                                            <div
+                                                className='wow zoomIn'
+                                            // animate={{ scale: [1.5, 1], opacity: [0, 1] }}
+                                            // transition={{ ease: "easeOut", duration: 1.5 }}
                                             >
                                                 <br />
                                                 <div>
                                                     <span className='' style={{ fontSize: '1.8rem', fontFamily: 'Great Vibes' }}>Heartily invite you to our Wedding</span>
                                                 </div>
-                                            </motion.div>
+                                            </div>
                                             {btn ? <></> : (
                                                 <>
                                                     <br />

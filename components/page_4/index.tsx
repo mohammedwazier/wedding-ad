@@ -140,10 +140,10 @@ export default function Page4() {
 
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
-            <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true }}
+            <div
+                // initial="offscreen"
+                // whileInView="onscreen"
+                // viewport={{ once: true }}
                 className='position-relative h-100'>
                 <div className='background-paper position-relative h-100' style={{ overflow: 'hidden' }}>
 
@@ -157,9 +157,9 @@ export default function Page4() {
                     <div className='position-relative p-3 p-md-5 h-100' style={{ zIndex: 2 }}>
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center'>
-                            <motion.div
-                                variants={upVariants}
-                                className='col-12'>
+                            <div
+                                // variants={upVariants}
+                                className='col-12 wow slideInUp'>
                                 <div className='row justify-content-center'>
                                     <div className='col-12 text-center'>
                                         <span className='' style={{ fontSize: '2rem', fontFamily: 'Great Vibes', fontWeight: 'bold' }}>RSVP</span>
@@ -173,12 +173,12 @@ export default function Page4() {
                                         </center>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
                         <div className='row mt-4 justify-content-center'>
-                            <motion.div
-                                variants={downVariants}
-                                className='col-12'>
+                            <div
+                                // variants={downVariants}
+                                className='col-12 wow slideInUp'>
                                 <div className='p-3' style={{ borderRadius: '10px', border: '1px solid rgba(174, 143, 122, 1)', background: 'rgba(174, 143, 122, .5)' }}>
                                     <small style={{ fontSize: '.7rem' }} className="text-muted">*NB: Diharapkan tidak mencantumkan Emoticon saat mengisi Ucapan.</small>
 
@@ -242,12 +242,12 @@ export default function Page4() {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            </motion.div >
+            </div >
         </div >
     )
 }

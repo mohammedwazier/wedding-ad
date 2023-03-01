@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-script-component-in-head */
 'use client'
 /* eslint-disable react-hooks/exhaustive-deps */
 import Page1 from '@/components/page_1';
@@ -15,6 +16,12 @@ import Head from 'next/head';
 // import BG from '@/assets/images/bg-auto.jpg';
 import { useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import Script from 'next/script';
+
+// import WOW from 'wowjs'
+// import { WOW } from 'wowjs';
+
+// const WOW = dynamic(() => import('wowjs'), { ssr: false })
 
 // const Page1 = dynamic(() => import('@/components/page_1'));
 const Page2 = dynamic(() => import('@/components/page_2'));
@@ -36,11 +43,41 @@ export default function Home() {
   const [audio, setAudio] = useState<any>(null);
 
   useEffect(() => {
+    // const WOW = require('wowjs');
     if (!audio) {
       const newAudio = new Audio("audio/from-this-moment.mp3");
       setAudio(newAudio) // only call client
     }
   })
+
+  useEffect(() => {
+    window.onload = () => {
+      const scriptEl = document.createElement('script');
+      scriptEl.src = 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js';
+      scriptEl.async = true;
+      scriptEl.onload = () => {
+        console.log('Script loaded!');
+
+        const scriptLoad = document.createElement('script');
+        scriptLoad.innerHTML = `
+        new WOW({
+          boxClass:     'wow',     
+          animateClass: 'animated',
+          offset:       0,         
+          mobile:       true,      
+          live:         true,      
+          scrollContainer: null,   
+          resetAnimation: true,
+        }).init()
+      `;
+
+        document.body.appendChild(scriptLoad);
+      };
+
+      document.body.appendChild(scriptEl);
+    }
+  }, []);
+
 
   const playAudio = () => {
     audio.loop = true;
@@ -110,6 +147,9 @@ export default function Home() {
         <link rel="apple-touch-icon" href={`${origin}/header.jpeg`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Wedding Arin Ayudiastika and Diana Yusup</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css" />
+
       </Head>
 
       <div ref={AudioDiv} id="audioElement" className='wh-100 mx-auto position-relative'>

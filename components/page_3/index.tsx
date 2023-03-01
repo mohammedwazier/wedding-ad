@@ -4,17 +4,17 @@ import Bunga from '@/assets/images/bottom-2.png';
 import BungaDown from '@/assets/images/Bunga - 2.png';
 import Image from 'next/image';
 
-import { motion } from 'framer-motion';
-import { upVariants, downVariants, rightVariants, leftVariants } from '../HoverStyle';
+// import { motion } from 'framer-motion';
+// import { upVariants, downVariants, rightVariants, leftVariants } from '../HoverStyle';
 
 export default function Page3() {
 
     return (
         <div className={`handphone-width mx-auto position-relative h-100 text-dark`}>
-            <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true }}
+            <div
+                // initial="offscreen"
+                // whileInView="onscreen"
+                // viewport={{ once: true }}
                 className=' position-relative h-100' >
                 <div className='background-paper position-relative h-100'>
 
@@ -28,10 +28,10 @@ export default function Page3() {
                         {/* Main */}
                         <div className='row h-100 justify-content-center align-items-center mt-3'>
                             <div className='col-12'>
-                                <motion.div
+                                <div
                                     // viewport={{ once: true }}
-                                    variants={upVariants}
-                                    className='row justify-content-center'>
+                                    // variants={upVariants}
+                                    className='row justify-content-center wow bounceInDown' data-wow-duration="1s">
                                     <div
                                         // variants={upVariants}
                                         className='col-12 text-center'>
@@ -58,13 +58,13 @@ export default function Page3() {
                                     {/* <div className='d-block d-md-none text-center als-script'>
                                         <h1 style={{ fontSize: '4rem', lineHeight: .5 }}>04 03 2023</h1>
                                     </div> */}
-                                </motion.div>
+                                </div>
                             </div>
                         </div>
                         <div className='row mt-4 justify-content-center align-items-center'>
-                            <motion.div
-                                variants={leftVariants}
-                                className='col-12 my-2 text-center'>
+                            <div
+                                // variants={leftVariants}
+                                className='col-12 my-2 text-center wow slideInLeft'>
                                 <div style={{ background: '#AE8F7A', color: '#FFF', borderRadius: '20px' }} className="shadow-lg">
                                     <div className='p-3'>
                                         <span className='' style={{ fontSize: '3rem', fontFamily: 'Great Vibes' }}>Akad</span>
@@ -82,10 +82,10 @@ export default function Page3() {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
-                            <motion.div
-                                variants={rightVariants}
-                                className='col-12 my-2 text-center'>
+                            </div>
+                            <div
+                                // variants={rightVariants}
+                                className='col-12 my-2 text-center wow slideInRight'>
                                 <div style={{ background: '#AE8F7A', color: '#FFF', borderRadius: '20px' }} className="shadow-lg">
                                     <div className='p-3'>
                                         <span className='' style={{ fontSize: '3rem', fontFamily: 'Great Vibes' }}>Resepsi</span>
@@ -103,13 +103,14 @@ export default function Page3() {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                             <div className='w-100 my-2' />
                             <div className='col-md-8 col-sm-8 col-12'>
 
                                 <div className='rounded-lg my-3' style={{ zIndex: '2', position: 'relative', }}>
-                                    <motion.div
-                                        variants={downVariants}
+                                    <div
+                                        className='wow slideInDown'
+                                    // variants={downVariants}
                                     >
                                         {/* <center className='cormorant-regular'><b>Maps</b></center> */}
                                         {/* <hr className='my-1' /> */}
@@ -129,7 +130,7 @@ export default function Page3() {
                                                 </a>
                                             </center>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 </div>
 
 
@@ -138,7 +139,7 @@ export default function Page3() {
                     </div>
 
                 </div>
-            </motion.div>
+            </div>
         </div>
     )
 }

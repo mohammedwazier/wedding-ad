@@ -33,29 +33,31 @@ export default function Page5() {
                             <div className='col-12'>
                                 <div className='row justify-content-center mt-4'>
                                     <div className='position-relative d-flex'>
-                                        <motion.div
-                                            variants={leftVariants}
+                                        <div
+                                            // variants={leftVariants}
+                                            className='wow slideInLeft'
                                         >
                                             <Image width="100" height="100" alt="Yusup" className='shadow-sm' src={LBelakang} style={{ width: '100px', border: '1px solid #AE8F7A', borderRadius: '50%' }} />
-                                        </motion.div>
-                                        <motion.div
-                                            variants={rightVariants}
+                                        </div>
+                                        <div
+                                            // variants={rightVariants}
+                                            className='wow slideInRight'
                                         >
                                             <Image width="100" height="100" alt="Arin" className='shadow-sm' src={WBelakang} style={{ width: '100px', border: '1px solid #AE8F7A', borderRadius: '50%' }} />
-                                        </motion.div>
+                                        </div>
                                     </div>
-                                    <motion.div
-                                        variants={upVariants}
-                                        className='col-11 mt-4 text-center cormorant-regular position-relative' style={{ zIndex: '2' }} >
+                                    <div
+                                        // variants={upVariants}
+                                        className='wow slideInUp col-11 mt-4 text-center cormorant-regular position-relative' style={{ zIndex: '2' }} >
                                         Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/Saudari berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
                                         <br />
                                         <br />
                                         <br />
                                         <span style={{ fontFamily: 'Great Vibes', color: '#947a68', fontSize: '2rem' }}>Arin & Yusup</span>
-                                    </motion.div>
-                                    <motion.div
-                                        variants={downVariants}
-                                        className='col-12 mb-4 mt-2'>
+                                    </div>
+                                    <div
+                                        // variants={downVariants}
+                                        className='wow slideInUp col-12 mb-4 mt-2'>
                                         <div className='rounded-lg position-relative' style={{ background: 'rgba(174, 143, 122, .7)', color: '#FFF', zIndex: 2 }}>
                                             <div className='card-body cormorant-light text-center' style={{ fontSize: '.8rem' }}>
                                                 Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
@@ -64,11 +66,11 @@ export default function Page5() {
                                                 (Q.S Ar Rum : 21)
                                             </div>
                                         </div>
-                                    </motion.div>
+                                    </div>
 
-                                    <motion.div
-                                        variants={downVariants}
-                                        className='col-12 position-relative w-100 mb-4 pb-4 mt-3' style={{ zIndex: 4 }}>
+                                    <div
+                                        // variants={downVariants}
+                                        className='wow slideInDown col-12 position-relative w-100 mb-4 pb-4 mt-3' style={{ zIndex: 4 }}>
                                         <div className='row text-center justify-content-center'>
                                             <div className='col'>
                                                 <div style={{ background: '#d2ae96', width: '50px', height: '50px', borderRadius: '50%' }} className=" mx-auto position-relative d-flex justify-content-center align-items-center">
@@ -95,7 +97,7 @@ export default function Page5() {
                                                 </span>
                                             </div>
                                         </div>
-                                    </motion.div>
+                                    </div>
 
                                 </div>
                             </div>

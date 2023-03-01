@@ -9,9 +9,9 @@ import Women from '@/assets/images/w.png';
 import Man from '@/assets/images/l.png';
 import Image from 'next/image';
 
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
-import { upVariants, leftVariants, rightVariants } from '../HoverStyle';
+// import { upVariants, leftVariants, rightVariants } from '../HoverStyle';
 
 export default function Page2() {
 
@@ -28,85 +28,85 @@ export default function Page2() {
 
                     <div className='position-relative p-5 h-100 mt-3'>
                         {/* Main */}
-                        <motion.div
-                            initial="offscreen"
-                            whileInView="onscreen"
-                            viewport={{ once: true }}
+                        <div
+                            // initial="offscreen"
+                            // whileInView="onscreen"
+                            // viewport={{ once: true }}
                             className='row h-100 align-items-center'>
-                            <motion.div
-                                variants={upVariants}
+                            <div
+                                // variants={upVariants}
 
-                                className='col-12 text-center mb-4'>
+                                className='col-12 text-center mb-4 wow bounceInDown'>
                                 <Image src={Bismillah} width={200} height={30.05} alt={'Bismillah'} className={'mb-3'} />
                                 <h3 style={{ fontFamily: 'Great Vibes' }}>Assalamu'alaikum Wr. Wb.</h3>
                                 <div className='cormorant-regular' style={{ fontSize: '1rem', lineHeight: 1.2 }}>Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta Kerabat sekalian untuk menghadiri acara pernikahan kami:</div>
-                            </motion.div>
+                            </div>
                             <div className='col-10'>
-                                <motion.div
+                                <div
                                     // ref={ref}
-                                    variants={leftVariants}
-                                    className='text-center'>
+                                    // variants={leftVariants}
+                                    className='text-center wow slideInLeft'>
                                     <Image src={Women} alt={'Arin Ayudiastika'} width={208} height={260} />
 
-                                </motion.div>
+                                </div>
                             </div>
-                            <motion.div
-                                variants={rightVariants}
+                            <div
+                                // variants={rightVariants}
 
-                                className='col-2 h-100 text-left cormorant-regular d-flex flex-column justify-content-between' style={{ fontSize: '2rem' }}>
+                                className='col-2 h-100 text-left cormorant-regular d-flex flex-column justify-content-between wow slideInRight' style={{ fontSize: '2rem' }}>
                                 <div>B</div>
                                 <div>R</div>
                                 <div>I</div>
                                 <div>D</div>
                                 <div>E</div>
-                            </motion.div>
+                            </div>
                             <div className='col-10 text-center'>
-                                <motion.div
-                                    variants={leftVariants}
+                                <div
+                                    // variants={leftVariants}
 
-                                    className=' py-3'>
+                                    className=' py-3 wow slideInLeft'>
                                     <h5 className='' style={{ fontFamily: 'Great Vibes' }}>Arin Ayudiastika Efendi, S.T.</h5>
                                     <div className='' style={{ fontSize: '.8rem' }}>
                                         <span className='cormorant-regular'>
                                             Putri Pertama Bpk. H. Nendi Efendi dan Ibu Hj. Sri Gantini, S.Pd.I.,M.A
                                         </span>
                                     </div>
-                                </motion.div>
+                                </div>
                             </div>
                             <div className='w-100 my-1' />
-                            <motion.div
-                                variants={leftVariants}
+                            <div
+                                // variants={leftVariants}
 
-                                className='col-2 h-100 text-left cormorant-regular d-flex flex-column justify-content-between' style={{ fontSize: '2rem' }}>
+                                className='wow slideInLeft col-2 h-100 text-left cormorant-regular d-flex flex-column justify-content-between' style={{ fontSize: '2rem' }}>
                                 <div>G</div>
                                 <div>R</div>
                                 <div>O</div>
                                 <div>O</div>
                                 <div>M</div>
-                            </motion.div>
+                            </div>
                             <div className='col-10'>
-                                <motion.div
-                                    variants={rightVariants}
+                                <div
+                                    // variants={rightVariants}
 
-                                    className='text-center'>
+                                    className='text-center wow slideInRight'>
                                     <Image src={Man} alt={'Diana Yusup'} width={208} height={260} />
-                                </motion.div>
+                                </div>
                             </div>
                             <div className='w-100' />
                             <div className='col-11 offset-2 text-center'>
-                                <motion.div
-                                    variants={rightVariants}
+                                <div
+                                    // variants={rightVariants}
 
-                                    className=' py-3'>
+                                    className=' py-3 wow slideInRight'>
                                     <h5 className='' style={{ fontFamily: 'Great Vibes' }}>Diana Yusup, S.T.</h5>
                                     <div className='' style={{ fontSize: '.8rem' }}>
                                         <span className='cormorant-regular'>
                                             Putra Bungsu Bpk. Kamaludin dan Ibu Titi Nurhayati
                                         </span>
                                     </div>
-                                </motion.div>
+                                </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                 </div>
