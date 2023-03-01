@@ -38,13 +38,13 @@ export default function Page4() {
 
     const NextPage = async () => {
         setPage(page + 1);
-        const data = await getData();
+        const data = await getData(page + 1);
         setLoadComment(data);
     }
 
     const PrevPage = async () => {
         setPage(page - 1);
-        const data = await getData();
+        const data = await getData(page - 1);
         setLoadComment(data);
     }
 

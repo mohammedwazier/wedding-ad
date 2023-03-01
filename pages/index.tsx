@@ -43,7 +43,6 @@ export default function Home() {
   const [audio, setAudio] = useState<any>(null);
 
   useEffect(() => {
-    // const WOW = require('wowjs');
     if (!audio) {
       const newAudio = new Audio("audio/from-this-moment.mp3");
       setAudio(newAudio) // only call client
@@ -62,7 +61,6 @@ export default function Home() {
         scriptLoad.innerHTML = `
         new WOW({
           boxClass:     'wow',     
-          animateClass: 'animated',
           offset:       0,         
           mobile:       true,      
           live:         true,      
