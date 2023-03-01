@@ -26,6 +26,8 @@ export default function Page4() {
 
     const [bukuTamu, setBukuTamu] = useState("");
 
+    const [loading, setLoading] = useState(true);
+
     const [message, setMessage] = useState({
         name: "",
         pesan: "",
@@ -38,22 +40,26 @@ export default function Page4() {
 
     const NextPage = async () => {
         setPage(page + 1);
+        setLoading(true);
         const data = await getData(page + 1);
         setLoadComment(data);
     }
 
     const PrevPage = async () => {
+        setLoading(true);
         setPage(page - 1);
         const data = await getData(page - 1);
         setLoadComment(data);
     }
 
     const getData = async (pg = 1) => {
-        let PG = pg !== 1 ? page : pg;
+        const PG = pg;
+
         const WeddingKey = process.env.NEXT_PUBLIC_WEDDING_KEY || "";
         const WeddingURL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
         let getListData = await fetch(`${WeddingURL}api/v1/get_list_buku/${WeddingKey}?page=${PG}`);
         const response = await getListData.json();
+        setLoading(false);
         return response;
     }
 
@@ -134,6 +140,7 @@ export default function Page4() {
                 setLoadComment(response);
                 // console.log(response);
                 setLoad(!load);
+                setLoading(false);
             })();
         }
     }, [load, page]);
@@ -202,35 +209,42 @@ export default function Page4() {
                                         <button onClick={SendPesan} className='btn btn-block cormorant-regular btn-sm btn-coklat' style={{ borderRadius: '15px' }}>Kirim</button>
                                     </div>
 
-                                    <div className='' style={{ maxHeight: '300px', height: 'auto', overflowX: 'hidden', overflowY: 'auto', }}>
-                                        {loadComment?.data.map((_v: any, key: Key | null | undefined) => (
-                                            <div key={key} className="my-3 card" style={{ borderRadius: '10px' }}>
-                                                <div className='py-2 px-3'>
-                                                    <div className='cormorant-bold mb-1'>
-                                                        {_v.name} &nbsp;
-                                                        {_v.status_kehadiran === 'hadir' ? (
-                                                            <Image src={Verified} width="15" height="15" alt={'Verified'} style={{ position: 'relative', transform: 'translateY(-15%) translateX(-25%)' }} />
-                                                        ) : (
-                                                            <Image src={UnVerified} width="15" height="15" alt={'UnVerified'} style={{ position: 'relative', transform: 'translateY(-15%) translateX(-25%)' }} />
-                                                        )}
-                                                    </div>
-                                                    <div className='cormorant-regular'>
-                                                        {_v.pesan}
-                                                    </div>
-                                                    <div className='cormorant-light'>
-                                                        <small>
-                                                            <i className="fa fa-clock-o" style={{ fontSize: '10px' }} />
-                                                            &nbsp;
-                                                            {/* {moment.tz(_v.created_at, 'Asia/Jakarta').format('LL')} */}
-                                                            {moment(_v.created_at).utcOffset(0).format('LLL')}
-                                                            {/* &nbsp;
-                                                            {_v.status_kehadiran === 'hadir' ? <small className='text-primary'>Hadir</small> : <small className='text-danger'>Tidak Hadir</small>} */}
-                                                        </small>
-                                                    </div>
-
+                                    <div className='' style={{ maxHeight: '300px', height: 'auto', overflowX: 'hidden', overflowY: 'auto', position: 'relative' }}>
+                                        {loading ? (
+                                            <div className="d-flex justify-content-center my-2">
+                                                <div className="spinner-border text-light" role="status">
+                                                    <span className="sr-only">Loading...</span>
                                                 </div>
                                             </div>
-                                        ))}
+                                        ) : (
+                                            <>
+                                                {loadComment?.data.map((_v: any, key: Key | null | undefined) => (
+                                                    <div key={key} className="my-3 card" style={{ borderRadius: '10px' }}>
+                                                        <div className='py-2 px-3'>
+                                                            <div className='cormorant-bold mb-1'>
+                                                                {_v.name} &nbsp;
+                                                                {_v.status_kehadiran === 'hadir' ? (
+                                                                    <Image src={Verified} width="15" height="15" alt={'Verified'} style={{ position: 'relative', transform: 'translateY(-15%) translateX(-25%)' }} />
+                                                                ) : (
+                                                                    <Image src={UnVerified} width="15" height="15" alt={'UnVerified'} style={{ position: 'relative', transform: 'translateY(-15%) translateX(-25%)' }} />
+                                                                )}
+                                                            </div>
+                                                            <div className='cormorant-regular'>
+                                                                {_v.pesan}
+                                                            </div>
+                                                            <div className='cormorant-light'>
+                                                                <small>
+                                                                    <i className="fa fa-clock-o" style={{ fontSize: '10px' }} />
+                                                                    &nbsp;
+                                                                    {moment(_v.created_at).utcOffset(0).format('LLL')}
+                                                                </small>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </>
+                                        )}
                                         <div className='row justify-content-center align-items-center text-center'>
                                             <div className='col-3'>
                                                 <button className='btn btn-outline-light btn-sm' onClick={PrevPage} disabled={loadComment.prev_page_url ? false : true}> {`<`} </button>

@@ -25,7 +25,7 @@ export default function Page1({ setOpened, playAudio }: any) {
         setBukuTamu(Tamu || "-");
     }, []);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (!height) {
             let wrapper = 0;
             let element = 0;
